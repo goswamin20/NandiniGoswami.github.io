@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<!--
+Template Name: Landon
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+-->
+<html>
+<head>
+<title>Amazon Employee Data Analysis</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<!-- Top Background Image Wrapper -->
+<div class="bgded" style="background-image:url('images/21.jpg');">
+  <div class="wrapper row0">
+    <div id="topbar" class="clear"> 
+      <ul class="nospace inline pushright">
+        <li><a href="index.html" title="Home"><i class="fa fa-home"></i></a></li>
+        <li><a href="Resume.html" title="Resume"><i class="fa fa-info"></i></a></li>
+        <li><a href="Contact.html" title="Contact"><i class="fa fa-mobile"></i></a></li>
+      </ul>
+      
+    </div>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <div class="wrapper row1">
+    <header id="header" class="clear"> 
+      <!-- ################################################################################################ -->
+      <div id="logo" class="fl_left">
+        <h1><a href="index.html"></a></h1>
+      </div>
+      <nav id="mainav" class="fl_right">
+        <ul class="clear">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Resume.html">Resume</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+  <div class="wrapper row0">
+    <section id="pageintro" class="clear"> 
+      <!-- ################################################################################################ -->
+      <h2 class="heading underlined">Amazon Employee Data Analysis</h2>
+        <p><a class="btn inverse" href="#ac">Read More</a></p>
+      <!-- ################################################################################################ -->
+    </section>
+  </div>
+</div>
+
+<div class="wrapper row3"><a name="ac"></a>
+  <main class="container clear">  
+    <div class="group">
+                    <table>
+                         <tr><td>
+                           <p class="font-x1 btmspace-30 one_half first" style="padding-left:20%">Git:</p> <a class="btmspace-30 one_half" href="https://github.com/goswamin20/Projects/tree/master/Amazon%20and%20contraceptive%20data%20Analysis"><img src="images/23.jpg" alt="git" style="width:30px;height:30px;"></a>
+                            </td></tr>
+                        <tr>
+                        <td>
+                            <p class="font-x1 btmspace-30 one_half first" style="padding-left:20%">Team:</p>
+                            <p class="font-x1 btmspace-30 one_half">Sarita Bhateja and Nandini Goswami</p>
+                        </td>
+                        </tr>
+                        <tr><td>
+                            <p class="font-x1 btmspace-30 one_half first" style="padding-left:20%">Technologies:</p>
+                            <p class="font-x1 btmspace-30 one_half">Technologies:  Python, Scikit learn</p>
+                        </td>
+                        </tr>
+        </table></div>
+    
+        <h2 class="font-x1" style="color:black;text-align:center;padding-top:10%">Problem Statement</h2>
+      <p> The problem statement is taken from Kaggle competition's Amazon Employee Access Challenge . When a new employee joins the company he or needs  a variety of access of systems and portals at different levels depnding on the designation, buisness unit, role etc of the employee. We are trying to automate this manual task of granting and revoking access rights of employees by assuming that people with similar designation, buisness unit and role will have similar access of resources and are trying to predict whether an employee should be granted or denied access.</p>
+      <h2 class="font-x1" style="color:black;text-align:center;padding-top:5%">Dataset Description</h2>
+      <p> Attribute Information:<br></p>
+          <ul>
+          <li>ACTION(Class Label)- ACTION is 1 if the resource was approved, 0 if the resource was not<br></li>
+              <li>RESOURCE- An ID for each resource<br></li>
+              <li>MGR ID- The EMPLOYEE ID of the manager of the cur-rent EMPLOYEE ID record; an employee may have only one manager at a time<br></li>
+              <li>ROLE ROLLUP 1- Company role grouping category id 1(e.g. US Engineering)<br></li>
+              <li>ROLE ROLLUP 2- Company role grouping category id 2(e.g. US Retail)<br></li>
+              <li>ROLE DEPTNAME- Company role department description(e.g. Retail)<br></li>
+              <li>ROLE TITLE- Company role business title description (e.g. Senior Engineering Retail Manager)<br></li>
+              <li>ROLE FAMILY DESC- Company role family extended de-scription (e.g. Retail Manager, Software Engineering)<br> </li>       
+      </ul>
+        
+      <h2 class="font-x1" style="color:black;text-align:center;padding-top:5%">System Design</h2>
+        <p> The System designing can be broadly divided into two steps:</p>
+          <ul><li>FEATURE SELECTION AND PREPROCESSING:<br>
+              For feature selection we ran random forest for evaluating feature importance. 
+              Apart from that in prepossessing we have removed all null values 
+              Normalised the features to ensure better predic-tions by the various classiFers.
+              The column with Resource ID was removed from Amazondataset because it has any unique IDs and there is no linkagebetween Resource ID and access. This feature was hampering the accuracy and results of all the algorithms.
+              Additionally, the data sets were unbalanced and skewed. Toavoid the case of bias, under sampling is done in order toget better results.</li>
+              <li><p> MODEL SELECTION:<br>
+                  For model selection the following algo-rithms were run and their performances were evaluated and compared:<br></p>
+                  <ul><li>Decision Tree</li>
+                      <li>Logistic Regression</li>
+                      <li>Adaboost</li>
+                      <li>Support Vector Machine</li>
+                      <li>k-Nearest Neighbor 6. Random Forest</li>
+                  </ul></li></ul>
+      <h2 class="font-x1" style="color:black;text-align:center;padding-top:5%">Evaluation and Results</h2>
+                  <p>The result evaluation for few machine learning models applied on Amazon emlpoyee access dataset are discussed below. A detailed one can be found in the report uploaded on git</p>
+      <ul><li><p>Decision Tree:<br><img src="images/24.JPG" alt="Awards" style="width:50%;height:50%;" align="middle"><br>
+The Figure shows Graphical representation of Depth vs Accuracy. When depth is small, the accuracy is low because of underfitting. As depth grows, the accuracy increases and when depth is significantly higher, the accuracy drops because of overfitting. The graph is not representing overfitting because it is getting overfitting at high depth greater than 40.<br>
+          <img src="images/25.JPG" alt="Awards" style="width:50%;height:50%;" align="middle"><br>
+          The Figure shows the ROC curve of Decision tree.</p></li>
+
+<li>k-Nearest Neighbour:<br>
+    <img src="images/26.JPG" alt="Awards" style="width:50%;height:50%;" align="middle"><br>
+    The Figure  shows the graph between k and accuracy.When k is small, the accuracy drops at first due to the case if overfitting, as k increases, the accuracy also increases the fluctuation is low. When k becomes quite large, the accuracy drops steeply due to the case of underfitting.</li>
+                  </ul>
+      <div class="clear"></div>
+  </main>
+</div>
+    
+    
+<div class="bgded overlay" style="background-image:url('images/02.jpe');">
+  <section class="blocks centred clear"> 
+    <!-- ################################################################################################ -->
+    <h2 class="center btmspace-80 underlined center">Other Projects</h2>
+    <div class="group">
+      <div class="one_half first">
+        <article class="btmspace-30 bg_dark inspace-30">
+            <h2 class="font-x2 btmspace-30"><a href="Foodsalsa.html">FoodSalsa</a></h2>
+          <p>A website for food lovers that will facilitate easy access of menu as per cuisine and food review posts for different food joints within the University.</p>
+          <p class="nospace"><a href="Foodsalsa.html">Read More &raquo;</a></p>
+        </article>
+        <article class="bg_light inspace-30">
+            <h2 class="font-x2 btmspace-30"><a href="Diabetic%20Nutritionist.html">Diabetic nutritionist</a></h2>
+          <p>An application which will serve as a personal nutritionist for diabetic patients that predicts whether a meal is suitable for a diabetic patient or not and provide healthier food substitutes.</p>
+          <p class="nospace"><a href="Diabetic%20Nutritionist.html">Read More &raquo;</a></p>
+        </article>
+      </div>
+      <div class="one_half">
+        <ul class="nospace group">
+          <li class="one_half first bg_light btmspace-30">
+            <article class="inspace-30">
+                <h2 class="font-x1"><a href="Predicting%20Accident%20Prone%20Areas.html">Predicting accident prone areas</a></h2>
+              <p>A system that predicts accident prone location severity depending on various factors and dynamically plot the results on Google maps.</p>
+              <p class="nospace"><a href="Predicting%20Accident%20Prone%20Areas.html">Read More &raquo;</a></p>
+            </article>
+          </li>
+          <li class="one_half bg_dark btmspace-30">
+            <article class="inspace-30">
+                <h2 class="font-x1"><a href="Travel%20Data%20Analysis.html">Travel Data Analysis</a></h2>
+              <p>Analyzed airline data to find various travel patterns like which destinations are travelled to or from are the most and so on.</p>
+              <p class="nospace"><a href="Travel%20Data%20Analysis.html">Read More &raquo;</a></p>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- ################################################################################################ -->
+  </section>
+</div>
+<div class="wrapper row4">
+  <footer id="footer" class="clear"> 
+    <!-- ################################################################################################ -->
+    <div class="center">
+      <!--<form class="btmspace-30" method="post" action="#">
+        <fieldset>
+          <legend>Newsletter:</legend>
+          <input class="btmspace-15" type="text" value="" placeholder="Email">
+          <button type="submit" value="submit" >Submit</button>
+        </fieldset>
+      </form>--->
+      <ul class="faico clear">
+        <li><a class="faicon-facebook" href="https://www.facebook.com/goswami.nandini20"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="faicon-linkedin" href="https://www.linkedin.com/in/nandini-goswami-6057a2126/"><i class="fa fa-linkedin"></i></a></li>
+      
+      </ul>
+    </div>
+    <!-- ################################################################################################ -->
+  </footer>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row5">
+  <div id="copyright" class="clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2015 - All Rights Reserved - <a href="#">Domain Name</a></p>
+    <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a> 
+<!-- JAVASCRIPTS -->
+<script src="layout/scripts/jquery.min.js"></script>
+<script src="layout/scripts/jquery.backtotop.js"></script>
+<script src="layout/scripts/jquery.mobilemenu.js"></script>
+<!-- IE9 Placeholder Support -->
+<script src="layout/scripts/jquery.placeholder.min.js"></script>
+<!-- / IE9 Placeholder Support -->
+</body>
+</html>

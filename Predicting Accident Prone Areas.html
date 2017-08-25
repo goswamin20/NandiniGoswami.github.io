@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<!--
+Template Name: Landon
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+-->
+<html>
+<head>
+<title>Predicting Accident Prone Areas</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<!-- Top Background Image Wrapper -->
+<div class="bgded" style="background-image:url('images/17.jpeg');">
+  <div class="wrapper row0">
+    <div id="topbar" class="clear"> 
+      <ul class="nospace inline pushright">
+        <li><a href="index.html" title="Home"><i class="fa fa-home"></i></a></li>
+        <li><a href="Resume.html" title="Resume"><i class="fa fa-info"></i></a></li>
+        <li><a href="Contact.html" title="Contact"><i class="fa fa-mobile"></i></a></li>
+      </ul>
+      
+    </div>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <div class="wrapper row1">
+    <header id="header" class="clear"> 
+      <!-- ################################################################################################ -->
+      <div id="logo" class="fl_left">
+        <h1><a href="index.html"></a></h1>
+      </div>
+      <nav id="mainav" class="fl_right">
+        <ul class="clear">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Resume.html">Resume</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+  <div class="wrapper row0">
+    <section id="pageintro" class="clear"> 
+      <!-- ################################################################################################ -->
+      <h2 class="heading underlined" style="font-size:45px;color:#cc99ff">Predicting Accident Prone Areas</h2>
+        <p><a class="btn inverse" href="#ac">Read More</a></p>
+      <!-- ################################################################################################ -->
+    </section>
+  </div>
+</div>
+
+<div class="wrapper row3"><a name="ac"></a>
+  <main class="container clear">  
+     <table><tr><td>
+                           <p class="font-x1 btmspace-30 one_half first" style="padding-left:20%">Git:</p> <a class="btmspace-30 one_half" href="https://github.com/goswamin20/Projects/tree/master/Predicting%20Accident%20Prone%20Areas"><img src="images/23.jpg" alt="git" style="width:30px;height:30px;"></a>
+                            </td></tr>
+                        <tr>
+                        <td>
+                            <p class="font-x1 btmspace-30 one_half first" style="padding-left:20%">Team:</p>
+                            <p class="font-x1 btmspace-30 one_half">Sarita Bhateja, Kavya Guruprasad and Nandini Goswami</p>
+                        </td>
+                        </tr>
+                        <tr><td>
+                            <p class="font-x1 btmspace-30 one_half first" style="padding-left:20%">Technologies:</p>
+                            <p class="font-x1 btmspace-30 one_half">Technologies:  Spark, Python, Databricks, Tableau </p>
+                        </td>
+        </table>
+     <h2 class="font-x1" style="color:black;text-align:center;padding-top:10%">Problem Statement</h2>
+      <p>Every day a number of people die out of road accidents all over the world. The severity of road accidents is more in densely populated countries. A country's asset is their population and the health and safety of it is every country's top priority.The numbers are startling and there is alarming need to have control on road accidents and ensure better road safety.This project aims to predict the severity of an accident for a particular location given various factors/parameter. This information will can help Government, city dwellers and tourists to ensure better safety measures while traveling by road.</p>
+      <h2 class="font-x1" style="color:black;text-align:center;padding-top:5%">Dataset Description</h2>
+      <p>The dataset contains the UK road accident data for the year 2015 and has been taken from the following web-page:<a href="https://data.gov.uk/dataset/road-accidents-safety-data/resource/ceb00cff-443d-4d43-b17a-ee13437e9564">https://data.gov.uk/dataset/road-accidents-safety-data/resource/ceb00cff-443d-4d43-b17a-ee13437e9564.</a><br>
+      The seventh column in the dataset is Accident_Severity that is the class label. This column suggests the severity of the accident based on numbers. A number 3 indicates a severe accident whereas if the accident severity of 1 indicates a less severe accident. Apart from this there are various columns like Speed_limit, Road_Type, Light_Conditions, Urban_or_Rural_Area, road_surface etc. that act as factors that affect the road accidents and their severiety. A detailed description of dataset can be found in pject report uploaded in git.  
+</p>
+      <h2 class="font-x1" style="color:black;text-align:center;padding-top:5%">System Design</h2>
+      <p>The problem is treated as a Classification problem of machine learning where a dataset and corresponding class label is provided. </p>
+          Brief overview of the Algorithms used:<br>
+      <ul><li>Decision Tree:<br> Classification tree analysis is when the predicted outcome isthe class to which the data belongs.<br></li><li>
+          Logistic Regression:<br> The logistic regression is a predictive analysis. We have used multinomial logistic regression as the class label has more than two values to predict. In this case, the algorithm works as one versus all others.<br><br></li></ul>
+      Plot of Accident locations in Google maps:<br><br>
+      The Accident locations have been plotted in google map using API of google map. We have developed a simple web application using Python(Django) to accomplish this. With the help of Django module called geolocation, we have plotted the accident prone areas. We used the latitude and longitude coordinates to plot the map. This is an interactive web application in the sense that a user could click on the accident area and it would display the date and time of the accident occurrence.The accident locations with severity 1,2 and 3 are plotted on google map using google API.
+      <h2 class="font-x1" style="color:black;text-align:center;padding-top:5%">Evaluation and Results</h2>
+      <p>Analysis of Algorithm:<br></p>
+          <ul>
+              <li>Decision tree:<br> The dataset is split into 80-20 ratio. The 80 percent of the data i.e. the training data is fed to the decision tree classifier and a tree is returned. This tree has dept of 5. When this tree is fed with the test data for prediction, it results in an accuracy of 85 percent and the error is 15 percent approximately.<br></li>
+              <li>Logistic Regression:<br> Similar to decision tree, for logistic regression we will train the model using training data and test the model created by logistic regression algorithm using test data. The result of multinomial logistic regression is similar to decision tree with accuracy as 85 percent and error of 15 percent approximately.<br></li></ul>
+              
+              We implemented two algorithms to classify and compare their results to ensure that we use the algorithm which gives better performance. But on running both the algorithms we found both are giving similar performance. Both the algorithms are equally efficient for predicting whether a location a severe accident prone or not.
+
+    <div class="clear"></div>
+  </main>
+</div>
+<div class="bgded overlay" style="background-image:url('images/02.jpe');">
+  <section class="blocks centred clear"> 
+    <!-- ################################################################################################ -->
+    <h2 class="center btmspace-80 underlined center">Other Projects</h2>
+    <div class="group">
+      <div class="one_half first">
+        <article class="btmspace-30 bg_dark inspace-30">
+            <h2 class="font-x2 btmspace-30"><a href="Foodsalsa.html">FoodSalsa</a></h2>
+          <p>A website for food lovers that will facilitate easy access of menu as per cuisine and food review posts for different food joints within the University.</p>
+          <p class="nospace"><a href="Foodsalsa.html">Read More &raquo;</a></p>
+        </article>
+        <article class="bg_light inspace-30">
+            <h2 class="font-x2 btmspace-30"><a href="Diabetic%20Nutritionist.html">Diabetic nutritionist</a></h2>
+          <p>An application which will serve as a personal nutritionist for diabetic patients that predicts whether a meal is suitable for a diabetic patient or not and provide healthier food substitutes.</p>
+          <p class="nospace"><a href="Diabetic%20Nutritionist.html">Read More &raquo;</a></p>
+        </article>
+      </div>
+      <div class="one_half">
+        <ul class="nospace group">
+          <li class="one_half first bg_light btmspace-30">
+            <article class="inspace-30">
+                <h2 class="font-x1"><a href="Amazon%20Employee%20Data%20Analysis.html">Amazon employee Data Analysis </a></h2>
+              <p>A system that classifies Amazon employees according to role based access control.</p>
+              <p class="nospace"><a href="Amazon%20Employee%20Data%20Analysis.html">Read More &raquo;</a></p>
+            </article>
+          </li>
+          <li class="one_half bg_dark btmspace-30">
+            <article class="inspace-30">
+                <h2 class="font-x1"><a href="Travel%20Data%20Analysis.html">Travel Data Analysis</a></h2>
+              <p>Analyzed airline data to find various travel patterns like which destinations are travelled to or from are the most and so on.</p>
+              <p class="nospace"><a href="Travel%20Data%20Analysis.html">Read More &raquo;</a></p>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- ################################################################################################ -->
+  </section>
+</div>
+
+
+<div class="wrapper row4">
+  <footer id="footer" class="clear"> 
+    <!-- ################################################################################################ -->
+    <div class="center">
+      <!--<form class="btmspace-30" method="post" action="#">
+        <fieldset>
+          <legend>Newsletter:</legend>
+          <input class="btmspace-15" type="text" value="" placeholder="Email">
+          <button type="submit" value="submit" >Submit</button>
+        </fieldset>
+      </form>--->
+      <ul class="faico clear">
+        <li><a class="faicon-facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="faicon-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="faicon-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="faicon-google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
+        <li><a class="faicon-instagram" href="#"><i class="fa fa-instagram"></i></a></li>
+        <li><a class="faicon-tumblr" href="#"><i class="fa fa-tumblr"></i></a></li>
+      </ul>
+    </div>
+    <!-- ################################################################################################ -->
+  </footer>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row5">
+  <div id="copyright" class="clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2015 - All Rights Reserved - <a href="#">Domain Name</a></p>
+    <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a> 
+<!-- JAVASCRIPTS -->
+<script src="layout/scripts/jquery.min.js"></script>
+<script src="layout/scripts/jquery.backtotop.js"></script>
+<script src="layout/scripts/jquery.mobilemenu.js"></script>
+<!-- IE9 Placeholder Support -->
+<script src="layout/scripts/jquery.placeholder.min.js"></script>
+<!-- / IE9 Placeholder Support -->
+</body>
+</html><!DOCTYPE html>
+<!--
+Template Name: Landon
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+-->

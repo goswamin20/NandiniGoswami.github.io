@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<!--
+Template Name: Landon
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+-->
+<html>
+<head>
+<title>Diabetic Nutritionist</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<!-- Top Background Image Wrapper -->
+<div class="bgded" style="background-image:url('images/19.jpg');">
+  <div class="wrapper row0">
+    <div id="topbar" class="clear"> 
+      <ul class="nospace inline pushright">
+        <li><a href="index.html" title="Home"><i class="fa fa-home"></i></a></li>
+        <li><a href="Resume.html" title="Resume"><i class="fa fa-info"></i></a></li>
+        <li><a href="Contact.html" title="Contact"><i class="fa fa-mobile"></i></a></li>
+      </ul>
+      
+    </div>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <div class="wrapper row1">
+    <header id="header" class="clear"> 
+      <!-- ################################################################################################ -->
+      <div id="logo" class="fl_left">
+        <h1><a href="index.html"></a></h1>
+      </div>
+      <nav id="mainav" class="fl_right">
+        <ul class="clear">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Resume.html">Resume</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+  <div class="wrapper row0">
+    <section id="pageintro" class="clear"> 
+      <!-- ################################################################################################ -->
+      <h2 class="heading underlined" style="color:black">Diabetic Nutritionist</h2>
+        <p><a class="btn inverse" href="#ac">Read More</a></p>
+      <!-- ################################################################################################ -->
+    </section>
+  </div>
+</div>
+
+<div class="wrapper row3"><a name="ac"></a>
+  <main class="container clear">  
+     <table>
+          <tr><td>
+                           <p class="font-x1 btmspace-30 one_half first" style="padding-left:20%">Git:</p> <a class="btmspace-30 one_half" href="https://github.com/goswamin20/Projects/tree/master/Diabetic%20Nutritionist"><img src="images/23.jpg" alt="git" style="width:30px;height:30px;"></a>
+                            </td></tr>
+                        <tr>
+                        <td>
+                            <p class="font-x1 btmspace-30 one_half first" style="padding-left:20%">Team:</p>
+                            <p class="font-x1 btmspace-30 one_half">Sarita Bhateja, Kavya Guruprasad and Nandini Goswami</p>
+                        </td>
+                        </tr>
+                        <tr><td>
+                            <p class="font-x1 btmspace-30 one_half first" style="padding-left:20%">Technologies:</p>
+                            <p class="font-x1 btmspace-30 one_half">Technologies:  Python, MySql, Scikit learn</p>
+                        </td>
+                        </tr>
+        </table>
+      <h2 class="font-x1" style="color:black;text-align:center;padding-top:10%">Problem Statement</h2>
+      <p>According to statistics shared by CDC (Centers for Disease Control and Prevention), there are more than 29 millionAmericans who are suffering from diabetes and one in four don't know about it.Eighty Six million adults who constituteto more than one in three U.S. adults, have prediabetes.These numbers are alarming and needs increased focus on the dietary needs of these patients. We are trying to develop a system that will help the patient keep a check on their diet in a way that there blood sugar does not shoot up after consumption of a particular food item.Also, if required a better substitute could be suggested. </p>
+      <h2 class="font-x1" style="color:black;text-align:center;padding-top:5%">Dataset Description</h2>
+      <p>For implemeting this system we have merged two data sets where one contained all nutrient values and the other contained Glycemicindex corresponding to food name.Our merged dataset contains food names, their nutrition values and the Glycemic index values. A higher Glycemic index value indicates higher carbohydrate level and hence should be avoided by patients. So, the glycemic index is the class label for our data set.</p>
+      <h2 class="font-x1" style="color:black;text-align:center;padding-top:5%">System Design</h2>
+      <p>We have used the the following machine learning and artificial intelligence techniques to develop the system.<br>
+          <ul><li>Linear regression:<br>
+              The Linear Regression model helps to predict Glycemic index values depending on the food nutrients. The GI value ranges from 0-100. GI is classified as : Low GI(0-55),Medium GI(56-69) and High GI(70-100) We have considered applyinglinear regression model, as the GI has continuous values.Using GI value and net carbohydrate content we will calculate GL, that will in turn help us decide whether the food is appropriate for the patient or not. Using GI values we will classify foods into low, medium and high glycemic index food that will help us predict better food substitutes for the patient.<br><br></li>
+              <li>K-Nearest Neighbor:<br>
+                  K-means is an unsupervised learning algorithm which groups similar data. Food samples from the dataset that have low range of GI value is given as input to the k-NN algorithm. When a user inputs a food item, clustering will be done in a way to find similar nutrients, but with a lower GI index.The best result will be returned as per the least distance.The number of clusters is given by k. Elbow method is used to find the optimal value of k. In this method, we plot a graph with number of clusters on the x-axis and average distance to the centroid and look for an elbow in the graph.The point when the line starts to atten out is the k. We obtained the following graph. From the above graph, it is clear that we need to choose the value of k as 3. Giving the value of k as the input to our clustering algorithm, we can plot the graph of the data points and their assigned clusters.
+                  <br><br></li>
+              <li>Case Based Reasoning:<br>
+                  Case Base involves four steps:<br>
+                   Retrieve: We retrieve food samples from dataset and try to use its knowledge to solve new cases.<br>
+                   Reuse: Once a substitute is found, we try to reuse this knowledge again and again.<br>
+                   Revise: Once we nd a solution we try to conrm from the user whether the solution is good enough.<br>
+                   Retain: After the solution has been successfully adapted to the target problem, we store it into our database and use it for solving newer problems.<br>
+                  Thus, if a patient agrees to the food item suggested by the system, the combination will be saved in the knowledge base and if similar case occurs in future, the results will be fetched rom the knowledge base.</li></ul>
+      <h2 class="font-x1" style="color:black;text-align:center;padding-top:5%">Evaluation and Results</h2>
+      <p>We tried other ML algorithms before coming down to Linear
+Regression and K-means such as Decision tree but results
+were not satisfactory. When the linear regression was run
+on complete dataset, the results were not good enough to
+proceed. We ran Random Forest algorithm to identify the
+importance of all the feature and features with least importance
+were removed. This process was repeated over and
+over to identify when to stop removing the features from
+the dataset. This process improved the performance of Linear
+Regression. The results are not at par, however, good
+enough to get started with the project. The next algorithm
+K-means is helping in the adaptation part and providing
+substitute to the user. In this algorithm, number of clusters
+to be chosen is an important factor for the algorithm
+to converge. To identify the best possible number of clusters
+required, we ran the K-means with number of clusters
+ranging from 1-10 and used Elbow method to choose the
+best k (number of clusters). The results were better with
+number of clusters = 3. The limited number of data points
+is a weakness because K-means performs good with large
+dataset. The K-means algorithm with CBR for adaptation
+is working better than expected and results are quite interesting.
+When we tested the results against test data points
+with various scenarios, the results were fair. Also, we shared
+the results with domain expert to get insight into it. To her
+knowledge, the results are average and there is scope of improvement.
+The project has a lot of potential to leverage if
+given enough data points to analyse in depth. Also, domain
+expert has a huge role to play in this project.</p>
+    <div class="clear"></div>
+  </main>
+</div>
+<div class="bgded overlay" style="background-image:url('images/02.jpe');">
+  <section class="blocks centred clear"> 
+    <!-- ################################################################################################ -->
+    <h2 class="center btmspace-80 underlined center">Other Projects</h2>
+    <div class="group">
+      <div class="one_half first">
+        <article class="btmspace-30 bg_dark inspace-30">
+            <h2 class="font-x2 btmspace-30"><a href="Foodsalsa.html">FoodSalsa</a></h2>
+          <p>A website for food lovers that will facilitate easy access of menu as per cuisine and food review posts for different food joints within the University.</p>
+          <p class="nospace"><a href="Foodsalsa.html">Read More &raquo;</a></p>
+        </article>
+        <article class="bg_light inspace-30">
+             <h2 class="font-x1"><a href="Amazon%20Employee%20Data%20Analysis.html">Amazon employee Data Analysis</a> </h2>
+              <p>A system that classifies Amazon employees according to role based access control.</p>
+              <p class="nospace"><a href="Amazon%20Employee%20Data%20Analysis.html">Read More &raquo;</a></p>
+        </article>
+      </div>
+      <div class="one_half">
+        <ul class="nospace group">
+          <li class="one_half first bg_light btmspace-30">
+            <article class="inspace-30">
+                <h2 class="font-x1"><a href="Predicting%20Accident%20Prone%20Areas.html">Predicting accident prone areas</a></h2>
+              <p>A system that predicts accident prone location severity depending on various factors and dynamically plot the results on Google maps.</p>
+              <p class="nospace"><a href="Predicting%20Accident%20Prone%20Areas.html">Read More &raquo;</a></p>
+            </article>
+          </li>
+          <li class="one_half bg_dark btmspace-30">
+            <article class="inspace-30">
+                <h2 class="font-x1"><a href="Travel%20Data%20Analysis.html">Travel Data Analysis</a></h2>
+              <p>Analyzed airline data to find various travel patterns like which destinations are travelled to or from are the most and so on.</p>
+              <p class="nospace"><a href="Travel%20Data%20Analysis.html">Read More &raquo;</a></p>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- ################################################################################################ -->
+  </section>
+</div>
+<div class="wrapper row4">
+  <footer id="footer" class="clear"> 
+    <!-- ################################################################################################ -->
+    <div class="center">
+      <!--<form class="btmspace-30" method="post" action="#">
+        <fieldset>
+          <legend>Newsletter:</legend>
+          <input class="btmspace-15" type="text" value="" placeholder="Email">
+          <button type="submit" value="submit" >Submit</button>
+        </fieldset>
+      </form>--->
+      <ul class="faico clear">
+         <li><a class="faicon-facebook" href="https://www.facebook.com/goswami.nandini20"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="faicon-linkedin" href="https://www.linkedin.com/in/nandini-goswami-6057a2126/"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+    <!-- ################################################################################################ -->
+  </footer>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row5">
+  <div id="copyright" class="clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2015 - All Rights Reserved - <a href="#">Domain Name</a></p>
+    <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a> 
+<!-- JAVASCRIPTS -->
+<script src="layout/scripts/jquery.min.js"></script>
+<script src="layout/scripts/jquery.backtotop.js"></script>
+<script src="layout/scripts/jquery.mobilemenu.js"></script>
+<!-- IE9 Placeholder Support -->
+<script src="layout/scripts/jquery.placeholder.min.js"></script>
+<!-- / IE9 Placeholder Support -->
+</body>
+</html>
